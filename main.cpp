@@ -1,5 +1,5 @@
 #include <glad/glad.h>
-#include <GL/freeglut.h>
+#include <GL/glut.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -384,7 +384,7 @@ void keyboardFunc(unsigned char key, int x, int y)
 	switch (key)
 	{
 	case 27: // ESC
-		glutLeaveMainLoop();
+		exit(0);
 		break;
 	case 'w': case 'W': camera.ProcessKeyboard(FORWARD, deltaTime);  break;
 	case 's': case 'S': camera.ProcessKeyboard(BACKWARD, deltaTime); break;
