@@ -362,14 +362,14 @@ void display()
 	glutSwapBuffers();
 }
 
-// FreeGLUT reshape callback
+// GLUT reshape callback
 
 void reshape(int width, int height)
 {
 	glViewport(0, 0, width, height);
 }
 
-// FreeGLUT idle callback — triggers redisplay every frame
+// GLUT idle callback — triggers redisplay every frame
 
 void idleFunc()
 {
@@ -377,7 +377,7 @@ void idleFunc()
 }
 
 
-// FreeGLUT keyboard callback (regular ASCII keys)
+// GLUT keyboard callback (regular ASCII keys)
 
 void keyboardFunc(unsigned char key, int x, int y)
 {
@@ -404,7 +404,7 @@ void keyboardFunc(unsigned char key, int x, int y)
 	glutPostRedisplay();
 }
 
-// FreeGLUT mouse button callback
+// GLUT mouse button callback
 
 void mouseButtonFunc(int button, int state, int x, int y)
 {
@@ -423,7 +423,7 @@ void mouseButtonFunc(int button, int state, int x, int y)
 }
 
 
-// FreeGLUT active mouse motion callback (look around)
+// GLUT active mouse motion callback (look around)
 
 void mouseMotionFunc(int x, int y)
 {
@@ -469,7 +469,7 @@ static void setupVAO(unsigned int& vao, unsigned int& vbo, unsigned int& ebo,
 
 int main(int argc, char** argv)
 {
-	// FreeGLUT init
+	// GLUT init
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(SCR_WIDTH, SCR_HEIGHT);
@@ -485,7 +485,7 @@ int main(int argc, char** argv)
 
 	glEnable(GL_DEPTH_TEST);
 
-	// Register FreeGLUT callbacks
+	// Register GLUT callbacks
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboardFunc);
@@ -1637,7 +1637,7 @@ int main(int argc, char** argv)
 	unsigned int VBOdec6, EBOdec6;
 	setupVAO(VAOdec6, VBOdec6, EBOdec6, decagon6, sizeof(decagon6), deca6_indices, sizeof(deca6_indices));
 
-	// Enter FreeGLUT main loop (never returns)
+	// Enter GLUT main loop (never returns)
 	glutMainLoop();
 
 	delete ourShader;
